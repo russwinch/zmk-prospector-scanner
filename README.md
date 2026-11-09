@@ -1,5 +1,17 @@
 # Prospector Scanner - ZMK Status Display Device
 
+> [!NOTE]
+> **russwinch fork.** Builds the scanner firmware for my Prospector.
+> - Module: [russwinch/prospector-zmk-module](https://github.com/russwinch/prospector-zmk-module)
+>   `scanner` branch (= t-ogura v2.2.3), pinned by commit in `config/west.yml`.
+> - ZMK main pinned to a commit, in `config/west.yml` and the workflow.
+> - Keyboards (status advertisement) are set up in
+>   [russwinch/zmk-config](https://github.com/russwinch/zmk-config).
+>
+> Firmware: Actions tab → latest run → `firmware` zip. Flash
+> `prospector_scanner.uf2` (or `prospector_scanner_touch.uf2` for the touch
+> display); flash the `settings_reset` one first when coming from other firmware.
+
 <p align="center">
   <img src="https://img.shields.io/badge/version-v2.2.3-green" alt="Version 2.2.3">
   <img src="https://img.shields.io/badge/ZMK-compatible-blue" alt="ZMK Compatible">

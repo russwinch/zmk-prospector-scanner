@@ -1,17 +1,23 @@
+# russwinch fork of t-ogura/zmk-config-prospector: builds the Prospector
+# scanner firmware. Keyboards are configured in russwinch/zmk-config.
 manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: prospector
-      url-base: https://github.com/t-ogura
+    - name: russwinch
+      url-base: https://github.com/russwinch
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # ZMK main pinned to a commit (the scanner needs Zephyr 4 and there is
+      # no ZMK release after v0.3.0). Keep in step with the workflow's @ref.
+      revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85
       import: app/west.yml
     - name: prospector-zmk-module
-      remote: prospector
-      revision: v2.2.3
+      remote: russwinch
+      # russwinch/prospector-zmk-module "scanner" branch = t-ogura v2.2.3.
+      # Same pin as the keyboards in russwinch/zmk-config.
+      revision: 72a71aeea816eb0f86ffc5b108b267076ce5f0af
       path: modules/prospector-zmk-module
   self:
     path: config
